@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>MapWithLeaflet</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+    <link rel="stylesheet" href="dist/MarkerCluster.css">
+    <link rel="stylesheet" href="dist/MarkerCluster.Default.css">
+    <script src="dist/leaflet.markercluster-src.js"></script>
+
+    <script src="adresses.js"></script>
+
+    <link rel="stylesheet" href="dist/Control.Geocoder.css" />
+	<script src="dist/Control.Geocoder.js"></script>
+
+    <link rel="stylesheet" href="Map.css" />
+    <link rel="stylesheet" href="Menu.css" />
+    <link rel="stylesheet" href="Button.css" />
+    <script src="Menu.js"></script>
+</head>
+<body>
+
+<header>
+    <ul>
+        <li>
+            <a id="home" href="#">Home
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </li>
+        <li>
+            <a href="#">About
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </li>
+        <li>
+            <a id="map" href="#">Map
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </li>
+        <li>
+            <a href="#">Contact
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </li>
+    </ul>
+</header>
+
+<main class="main">
+<div id="mapid" class="map"></div>
+<script>
+	//[начальные координаты], масштаб
+	let map = L.map('mapid').setView([43.03667, 44.66778], 10);
+
+	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+        minZoom: 2,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/streets-v11',
+		tileSize: 512,
+		zoomOffset: -1
+	}).addTo(map);
+
+	let geocoder = new L.Control.Geocoder.Nominatim();
+	let markers  = L.markerClusterGroup();
+	for (let i = 0; i < addressPoints.length; i++) {
+	    f(addressPoints[i]);
+	}
+	map.addLayer(markers);
+
+	async function f(obj) {
+        await geocoder.geocode(obj[3]+" "+obj[4]+" "+obj[5], results=> {
+            latLng= new L.LatLng(results[0].center.lat, results[0].center.lng);
+            marker = new L.Marker (latLng);
+            marker.bindPopup('Объект: '+obj[0]+"<br/>"+'Имя: '+obj[1]+"<br/>"+'Диагноз: '+obj[2]+"<br/>"+'Город: '+obj[5]);
+            markers.addLayer(marker);
+        });
+    }
+
+</script>
+
+
+
+    <div>
+        <a href="#" class="buttonClose">Close</a>
+        <script>
+
+                document.querySelector('.buttonClose').onclick = function() {
+                    document.getElementById('mapid').hidden = true;
+                    document.querySelector('.buttonClose').hidden = true;
+                }
+                document.getElementById('map').onclick = function() {
+                    document.getElementById('mapid').hidden = false;
+                    document.querySelector('.buttonClose').hidden = false;
+                }
+
+
+        </script>
+    </div>
+</main>
+
+</body>
+</html>
