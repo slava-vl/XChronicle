@@ -28,6 +28,11 @@
 <body>
 
 <header>
+     <a class="logo">
+        <img src="earth.png" class="earth" alt="земля">
+        <span class="logo_name">XCHRONICLE</span>
+        <span class="logo_under">будь в курсе событий!</span>
+    </a>
     <ul>
         <li>
             <a id="home" href="#">Home
@@ -100,11 +105,8 @@
 </script>
 
 
-
     <div>
-        <a href="#" class="buttonClose">Close</a>
         <script>
-
                 document.querySelector('.buttonClose').onclick = function() {
                     document.getElementById('mapid').hidden = true;
                     document.querySelector('.buttonClose').hidden = true;
@@ -113,8 +115,6 @@
                     document.getElementById('mapid').hidden = false;
                     document.querySelector('.buttonClose').hidden = false;
                 }
-
-
         </script>
     </div>
 </main>
