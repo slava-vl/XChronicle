@@ -29,9 +29,11 @@
 
 <header>
      <a class="logo">
-        <img src="earth.png" class="earth" alt="земля">
-        <span class="logo_name">XCHRONICLE</span>
-        <span class="logo_under">будь в курсе событий!</span>
+        <div class="neon-wrapper">
+            <span class="txt" >XCHRONICLE</span>
+            <span class="gradient"></span>
+            <span class="dodge"></span>
+       </div>
     </a>
     <ul class="menulist">
         <li>
@@ -51,7 +53,7 @@
             </a>
         </li>
         <li>
-            <a id="map" href="#">Map
+            <a onclick="toggleMap()" id="map" href="#" >Map
                 <span></span>
                 <span></span>
                 <span></span>
@@ -102,6 +104,15 @@
         });
     }
 
+    function toggleMap()
+    {
+        let map = document.getElementById("mapid")
+        map.classList.toggle("hide")
+
+        let news = document.getElementById("listnews")
+        news.classList.toggle("centered")
+    }
+
 </script>
 
 
@@ -117,7 +128,7 @@
                 }
         </script>
     </div>
-        <ul class ="newslist">
+        <ul class ="newslist" id="listnews">
             <li>
                 Альбом MIYAGI и ANDY PANDA стал самым популярным на Spotify
             </li>
@@ -147,7 +158,23 @@
             </li>
             <li>
                 Новогодние каникулы в Осетии обойдутся дороже чем в Танзании или Эмиратах
-            </li>           
+            </li>
+            <li>
+                Новогодние каникулы в Осетии обойдутся дороже чем в Танзании или Эмиратах
+            </li>
+            <li>
+                Новогодние каникулы в Осетии обойдутся дороже чем в Танзании или Эмиратах
+            </li>
+            <li>
+                Новогодние каникулы в Осетии обойдутся дороже чем в Танзании или Эмиратах
+            </li>
+            <li>
+                Новогодние каникулы в Осетии обойдутся дороже чем в Танзании или Эмиратах
+            </li>
+            <li>
+                Новогодние каникулы в Осетии обойдутся дороже чем в Танзании или Эмиратах
+            </li>
+                       
         </ul>
 </main>
 

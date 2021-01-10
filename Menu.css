@@ -2,29 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background-color: #383838;
-}
-.earth{
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top:1%;
-    left:2%;
-}
-.logo_name{
-    position: absolute;
-    top:2%;
-    left:6%;
-    color:#ff6347;
-    font-family:Bradley Hand, cursive;
-}
-.logo_under{
-    position: absolute;
-    top:4%;
-    left:5%;
-    color:yellow;
-    text-decoration: underline;
-    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+    background-color: #37363d;
 }
 header>ul>li a{
     font-family: New Century Schoolbook, TeX Gyre Schola, serif;
@@ -32,7 +10,7 @@ header>ul>li a{
 }
 header{
     height:100px;
-    background:url("orig.png") #21201f 0 100% repeat-x;
+    background:url("s.png") #000000 0 100% repeat-x;
 }
 ul.menulist {
     position: absolute;
@@ -47,6 +25,8 @@ ul.menulist {
 ul.menulist li {
     position: relative;
     list-style: none;
+    font-size:large;
+    font-family: Arial, Helvetica, sans-serif;
 }
 ul.menulist li a {
     position: relative;
@@ -97,11 +77,23 @@ ul.menulist li a span:nth-child(4) {
 }
 ul.newslist{
     position: absolute;
-    top: 10%;
+    top: 9%;
     left: 50%;
+
+    filter: alpha(opacity=100);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+ul.newslist.centered{
+    position: absolute;
+    top: 9%;
+    left: 25%;
+
 }
 ul.newslist li{
-    color:#1523e9;
+    color:rgb(19, 16, 13);
     line-height: 3.19;
 }
 .newslist {
@@ -109,19 +101,18 @@ ul.newslist li{
     list-style: none;
 }    
 .newslist li {
-    width: 116%;
     position: relative;
-    padding: 10px 30px;
-    background: linear-gradient(to left,#ADCEE9 0%, #FFF, #ADCEE9);
-    border: 2px solid#151a1f;
+    width: 49vw;
+    background: linear-gradient(to left,#69b9e7 0%, #ffffff, #69b9e7);
+    border: 2px solid#595a5a;
     border-radius: 10px;
     color: #506a6b; 
-    box-shadow: 0 5px 5px 0 rgba(0,0,0, .2);
+    box-shadow: 0 5px 5px 0 rgba(0,0,0, .2);    
     margin-bottom: 5px;
     text-align:center;
     background-size: 100% 100%;
     z-index: 1;
-    font-family:New Century Schoolbook, TeX Gyre Schola, serif;
+    font-family:Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
 }
 .newslist li:before {
@@ -145,4 +136,51 @@ ul.newslist li{
 .newslist li:hover:before {
     width: 100%;
     opacity: 1;
+}
+.txt {
+    color: #ffffff;
+    background:#000000;
+    font-size:60px;
+    font-weight: bold;
+    font-family: Arial;
+    text-transform: uppercase;
+}
+.txt::before {
+    content: 'XCHRONICLE';
+    position: absolute;
+    mix-blend-mode: difference;
+    filter: blur(3px);
+}
+.neon-wrapper {
+    position: absolute;
+    top: 5%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    display:inline-flex;
+    filter: brightness(300%);
+    overflow: hidden;
+}
+.gradient{
+    background: linear-gradient(114.5793141156962deg, rgba(6, 227, 250,1) 4.927083333333334%,rgba(229, 151, 64,1) 97.84374999999999%);
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height:100%;
+    mix-blend-mode: multiply;
+}
+.dodge {
+    background: radial-gradient(circle,white,black 35%) center / 25% 25%;
+    position: absolute;
+    top:-100%;
+    left:-100%;
+    right:0;
+    bottom:0;
+    mix-blend-mode: color-dodge;
+    animation: dodge-area 3s linear infinite;
+}
+@keyframes dodge-area {
+    to {
+        transform: translate(50%,50%);
+    }
 }
