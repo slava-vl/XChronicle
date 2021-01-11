@@ -72,7 +72,7 @@
 </header>
 
 <main class="main">
-<div id="mapid" class="map"></div>
+<div id="mapid" class="map" ></div>
 <script>
 	//[начальные координаты], масштаб
 	let map = L.map('mapid').setView([43.03667, 44.66778], 10);
@@ -115,19 +115,7 @@
 
 </script>
 
-
-    <div>
-        <script>
-                document.querySelector('.buttonClose').onclick = function() {
-                    document.getElementById('mapid').hidden = true;
-                    document.querySelector('.buttonClose').hidden = true;
-                }
-                document.getElementById('map').onclick = function() {
-                    document.getElementById('mapid').hidden = false;
-                    document.querySelector('.buttonClose').hidden = false;
-                }
-        </script>
-    </div>
+<div>
         <ul class ="newslist" id="listnews">
             <li>
                 Альбом MIYAGI и ANDY PANDA стал самым популярным на Spotify
@@ -176,6 +164,7 @@
             </li>
                        
         </ul>
+</div>
 </main>
 
 </body>

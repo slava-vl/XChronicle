@@ -9,8 +9,10 @@ header>ul>li a{
     font-weight: bold;
 }
 header{
+    width: 100%;
     height:100px;
     background:url("s.png") #000000 0 100% repeat-x;
+    z-index: 1000;
 }
 ul.menulist {
     position: absolute;
@@ -33,7 +35,7 @@ ul.menulist li a {
     width: 100px;
     height: 40px;
     display: block;
-    color: #ff6347;
+    color: #477bff;
     line-height: 40px;
     text-align: center;
     text-decoration: none;
@@ -45,7 +47,7 @@ ul.menulist li a span {
     position: absolute;
     width: 25%;
     height: 100%;
-    background-color: tomato;
+    background-color: #4784ff;
     z-index: -1;
     transform-origin: top;
     transform: scaleY(0);
@@ -75,15 +77,12 @@ ul.menulist li a span:nth-child(4) {
     left: 75%;
     transition-delay: 0.45s;
 }
+
+
 ul.newslist{
     position: absolute;
     top: 9%;
     left: 50%;
-
-    filter: alpha(opacity=100);
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-    -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
 }
 ul.newslist.centered{
@@ -93,7 +92,7 @@ ul.newslist.centered{
 
 }
 ul.newslist li{
-    color:rgb(19, 16, 13);
+    color: rgb(255, 255, 255);
     line-height: 3.19;
 }
 .newslist {
@@ -103,33 +102,26 @@ ul.newslist li{
 .newslist li {
     position: relative;
     width: 49vw;
-    background: linear-gradient(to left,#69b9e7 0%, #ffffff, #69b9e7);
-    border: 2px solid#595a5a;
-    border-radius: 10px;
-    color: #506a6b; 
-    box-shadow: 0 5px 5px 0 rgba(0,0,0, .2);    
-    margin-bottom: 5px;
-    text-align:center;
+    padding-left: 10px;
+    background: #1851c2;
+    display: block;
+    margin-bottom: .25rem;
+
     background-size: 100% 100%;
     z-index: 1;
-    font-family:Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
 }
 .newslist li:before {
     content: "";
-    position:absolute;
+    position: absolute;
     height: 100%;
-    top: 50%;
     left: 50%;
-    background: linear-gradient(to left, #EBF3FA 0%, #FFF, #EBF3FA);
-    border-radius: 10px;
+    top: 50%;
+    bottom: 0;
+    width: 0.5rem;
+    background: #4079ec;
     opacity: 0;
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -ms-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
     transition: all 0.3s;
     z-index: -1;
 }
@@ -137,6 +129,8 @@ ul.newslist li{
     width: 100%;
     opacity: 1;
 }
+
+
 .txt {
     color: #ffffff;
     background:#000000;
