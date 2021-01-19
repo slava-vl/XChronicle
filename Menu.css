@@ -35,7 +35,7 @@ ul.menulist li a {
     width: 100px;
     height: 40px;
     display: block;
-    color: #477bff;
+    color: rgba(6, 227, 250,1);
     line-height: 40px;
     text-align: center;
     text-decoration: none;
@@ -47,7 +47,7 @@ ul.menulist li a span {
     position: absolute;
     width: 25%;
     height: 100%;
-    background-color: #4784ff;
+    background-color:  rgba(6, 227, 250,1);
     z-index: -1;
     transform-origin: top;
     transform: scaleY(0);
@@ -92,7 +92,7 @@ ul.newslist.centered{
 
 }
 ul.newslist li{
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     line-height: 3.19;
 }
 .newslist {
@@ -102,11 +102,13 @@ ul.newslist li{
 .newslist li {
     position: relative;
     width: 49vw;
-    padding-left: 10px;
-    background: #1851c2;
-    display: block;
-    margin-bottom: .25rem;
-
+    background: linear-gradient(to left,rgba(6, 227, 250,1) 0%,rgba(6, 227, 250,1), rgba(6, 227, 250,1));
+    border: 2px solid#595a5a;
+    border-radius: 10px;
+    color: #506a6b; 
+    box-shadow: 0 5px 5px 0 rgba(0,0,0, .2);    
+    margin-bottom: 5px;
+    text-align:center;
     background-size: 100% 100%;
     z-index: 1;
     font-weight: bold;
@@ -119,7 +121,9 @@ ul.newslist li{
     top: 50%;
     bottom: 0;
     width: 0.5rem;
-    background: #4079ec;
+    background:  #ffffff;
+    border: 2px solid#595a5a;
+    border-radius: 10px;
     opacity: 0;
     transform: translateX(-50%) translateY(-50%);
     transition: all 0.3s;

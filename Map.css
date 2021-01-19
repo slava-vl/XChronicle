@@ -2,12 +2,8 @@
     position: fixed;
     width: 50%;
     height: 800px;
-
-
-    opacity:0; /*Элемент полностью прозрачный (невидимый)*/
-    transition: 1s; /*Скорость перехода состояния элемента*/
-    animation: show 1s 1; /* Указываем название анимации, её время и количество повторов*/
-    animation-fill-mode: forwards; /* Чтобы элемент оставался в конечном состоянии анимации */
+    position: fixed;
+    
 
     /* Для анимации */
     filter: alpha(opacity=100);
@@ -31,3 +27,10 @@
     -webkit-transform: translateX(100%);
     transform: translateX(50%);
 } 
+#closeButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    z-index: 500;
+  }

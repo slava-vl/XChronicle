@@ -28,7 +28,6 @@
 <body>
 
 <header>
-    
      <a class="logo">
         <div class="neon-wrapper">
             <span class="txt" >XCHRONICLE</span>
@@ -37,14 +36,7 @@
        </div>
     </a>
     <ul class="menulist">
-        <li>
-            <a id="home" href="#">Home
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </a>
-        </li>
+
         <li>
             <a href="#">About
                 <span></span>
@@ -73,7 +65,11 @@
 </header>
 
 <main class="main">
-<div id="mapid" class="map" ></div>
+<div id="mapid" class="map">
+    <button onclick="toggleMap()" id="closeButton">
+        Закрыть
+    </button>
+</div>
 <script>
 	//[начальные координаты], масштаб
 	let map = L.map('mapid').setView([43.03667, 44.66778], 10);
@@ -115,8 +111,6 @@
     }
 
 </script>
-
-<div>
         <ul class ="newslist" id="listnews">
             <li>
                 Альбом MIYAGI и ANDY PANDA стал самым популярным на Spotify
@@ -165,7 +159,6 @@
             </li>
                        
         </ul>
-</div>
 </main>
 
 </body>
